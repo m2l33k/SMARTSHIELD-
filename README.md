@@ -1,3 +1,5 @@
+all our ressources : 
+https://drive.google.com/drive/folders/1tAWs_VmK4nqVTv2384F3qPWv8XIWd41D
 # AI-Powered Cybersecurity Automation 🛡️
 
 
