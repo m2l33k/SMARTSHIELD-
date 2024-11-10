@@ -1,38 +1,80 @@
-.App {
-  text-align: center;
-}
+/* src/App.css */
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+/* Basic container styling */
+.app-container {
+  font-family: 'Arial', sans-serif;
   color: white;
+  text-align: center;
+  background-color: #111; /* Dark background color */
+  min-height: 100vh;
+  padding: 20px;
+  position: relative;
 }
 
-.App-link {
-  color: #61dafb;
+/* Navigation styling */
+nav {
+  margin-bottom: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Unordered list of navigation buttons */
+.nav-list {
+  display: flex;
+  justify-content: center;  /* Align buttons in the center */
+  gap: 20px;  /* Space between buttons */
+  list-style-type: none;  /* Remove default list styling */
+  padding: 0;
+  margin: 0;
+}
+
+/* Navigation buttons */
+.nav-button {
+  padding: 10px 20px;
+  background-color: transparent;
+  border: 2px solid #ff073a; /* Red neon border */
+  color: #ff073a; /* Neon red text */
+  font-size: 1.1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+  background-color: #ff073a; /* Red background on hover */
+  color: white; /* White text on hover */
+  box-shadow: 0 0 10px #ff073a, 0 0 20px #ff073a; /* Neon glow effect */
+}
+
+/* Header styling */
+.main-heading {
+  font-size: 2.5rem;
+  margin-top: 30px;
+  color: #ff073a; /* Neon red */
+}
+
+/* Apply cybersecurity background */
+.app-container {
+  background-image: url('/src/assets/anonymous.jpg'); /* Path to the background image */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* Darken background to make text readable */
+.app-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+  z-index: 0;
+}
+
+/* Ensure content stays above the overlay */
+.app-container > * {
+  position: relative;
+  z-index: 1;
 }

@@ -1,0 +1,42 @@
+/* src/App.css or src/components/ThreatNews.css */
+
+.threat-news-container {
+    background-color: #1c1c1c;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+  }
+  
+  threat-news-container h2 {
+    color: #ff073a;
+    text-align: center;
+    text-shadow: 0 0 10px #ff073a, 0 0 20px #ff073a;
+  }
+  
+  .news-item {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 5px;
+  }
+  
+  .news-item h3 {
+    font-size: 1.2rem;
+    color: #ff073a;
+    text-shadow: 0 0 5px #ff073a, 0 0 10px #ff073a;
+  }
+  
+  .news-item p {
+    color: white;
+    font-size: 0.9rem;
+  }
+  
+  .news-item a {
+    text-decoration: none;
+    color: #ff073a;
+  }
+  
+  .news-item a:hover {
+    text-decoration: underline;
+  }
+  

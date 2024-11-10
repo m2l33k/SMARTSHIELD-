@@ -1,0 +1,44 @@
+/* src/pages/Dashboard.css */
+
+/* Container for the dashboard page */
+.dashboard-container {
+    padding: 20px;
+    color: white;
+    text-align: center;
+  }
+  
+  /* Tools Section Styling */
+  .tools-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 40px;
+  }
+  
+  /* Styling for each tool block */
+  .tool {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 255, 153, 0.5);
+  }
+  
+  .tool h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #00ff99;
+  }
+  
+  .tool p {
+    font-size: 1.1rem;
+    color: #dcdcdc;
+    line-height: 1.6;
+  }
+  
+  /* Make the grid responsive for smaller screens */
+  @media (max-width: 768px) {
+    .tools-section {
+      grid-template-columns: 1fr;
+    }
+  }
+  

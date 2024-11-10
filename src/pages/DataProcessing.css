@@ -1,0 +1,120 @@
+/* DataProcessing.css */
+
+/* General container styling */
+.data-processing-container {
+    padding: 30px;
+    background-color: #212121;
+    color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    max-width: 600px;
+    margin: auto;
+  }
+  
+  h2 {
+    color: #4caf50;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .status {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+    color: #ff9800;
+  }
+  
+  .progress-bar {
+    background-color: #555;
+    border-radius: 20px;
+    height: 20px;
+    margin: 10px 0;
+    overflow: hidden;
+  }
+  
+  .progress {
+    height: 100%;
+    background-color: #4caf50;
+    border-radius: 20px;
+    transition: width 1s ease;
+  }
+  
+  p {
+    font-size: 1rem;
+    color: #b0bec5;
+  }
+  
+  /* Stages list */
+  .stage-list {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+  }
+  
+  .stage {
+    width: 18%;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #333;
+    color: #ffcc00;
+    transition: background-color 0.5s ease;
+  }
+  
+  .stage.completed {
+    background-color: #4caf50;
+  }
+  
+  .stage-title {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  
+  /* Add animations to completed stages */
+  .stage.completed .stage-title {
+    color: #ffffff;
+    text-decoration: underline;
+  }
+  
+  /* Result Button */
+  .result-section {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .result-btn {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: #4caf50;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .result-btn:hover {
+    background-color: #45a049;
+  }
+  
+  .result-btn:focus {
+    outline: none;
+  }
+  
+  /* Mobile responsiveness */
+  @media (max-width: 600px) {
+    .data-processing-container {
+      padding: 20px;
+    }
+    .stage-list {
+      flex-direction: column;
+    }
+    .stage {
+      margin-bottom: 10px;
+      width: 100%;
+    }
+  }
+  
