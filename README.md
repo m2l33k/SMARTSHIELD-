@@ -56,52 +56,87 @@ docker-compose up
 ## 📝 Project Structure
 
 ```
-src/
+project-root/
 │
-├── assets/                # Static files like images, icons, and styles
+├── backend/                  # Backend services and API-related files
+│   ├── controllers/          # Logic for handling HTTP requests
+│   │   ├── authController.js # Handle user authentication
+│   │   ├── incidentController.js # Incident management
+│   │   └── aiModelController.js  # AI model result handling
+│   │
+│   ├── models/               # Database models (ORM like Sequelize, Mongoose, etc.)
+│   │   ├── User.js           # User model for authentication and authorization
+│   │   ├── Incident.js       # Incident-related database schema
+│   │   ├── Alert.js          # Alert data model
+│   │   └── AIModelResult.js  # Model result schema
+│   │
+│   ├── routes/               # Routes definition (URL endpoints)
+│   │   ├── authRoutes.js     # User authentication routes
+│   │   ├── incidentRoutes.js # Routes related to incidents
+│   │   └── aiModelRoutes.js  # Routes for interacting with AI models
+│   │
+│   ├── services/             # Helper functions and services (e.g., ML processing, API)
+│   │   ├── authService.js    # User authentication logic
+│   │   ├── aiService.js      # AI model services for interaction with ML models
+│   │   └── incidentService.js # Service for handling incident data
+│   │
+│   ├── config/               # Configuration files (e.g., database, environment variables)
+│   │   └── dbConfig.js       # Database connection setup
+│   │
+│   ├── utils/                # Utility functions
+│   │   └── logger.js         # Logging utility
+│   │
+│   ├── app.js                # Main backend app setup (Express.js or similar)
+│   └── server.js             # Server entry point (to start the backend)
 │
-├── components/            # Reusable UI components
-│   ├── Navbar.js          # Navigation bar component
-│   ├── Sidebar.js         # Sidebar for navigation across pages
-│   ├── DataCard.js        # Card components to show individual data info
-│   ├── DataChart.js       # Visualization components (e.g., charts, graphs)
-│   ├── AlertTable.js      # Table for displaying alerts
-│   ├── IncidentDetails.js # Detailed view for incidents
-│   ├── MLModelResults.js  # Display results of AI/ML model predictions
-│   └── StatusIndicator.js # Status indicator (e.g., healthy, alert, etc.)
+├── frontend/                 # Frontend application (React.js)
+│   ├── public/               # Public assets and static files (e.g., index.html)
+│   ├── src/                  # Source code for the frontend app
+│   │   ├── components/       # UI Components
+│   │   │   ├── Navbar.js     # Navigation bar
+│   │   │   ├── Sidebar.js    # Sidebar for app navigation
+│   │   │   ├── DataCard.js   # Card components for displaying data
+│   │   │   └── DataChart.js  # Chart/graph visualization components
+│   │   │
+│   │   ├── pages/            # React components for each page
+│   │   │   ├── Dashboard.js  # Main dashboard view
+│   │   │   ├── IncidentResponse.js # Incident response page
+│   │   │   ├── Analytics.js # Historical data and analytics view
+│   │   │   └── AIModel.js   # AI model results page
+│   │   │
+│   │   ├── services/         # API service layer for communication with the backend
+│   │   │   ├── api.js        # API service for general data fetching
+│   │   │   └── aiService.js  # Service to interact with AI model endpoints
+│   │   │
+│   │   ├── store/            # Redux or Context API setup for global state management
+│   │   ├── utils/            # Utility functions specific to the frontend
+│   │   └── App.js            # Main app component for routing and layout
+│   │
+│   ├── .env                  # Environment variables (e.g., API URLs, keys)
+│   ├── index.js              # React entry point (renders the App component)
+│   └── package.json          # Frontend dependencies and configuration
 │
-├── pages/                 # Different pages for navigation
-│   ├── Dashboard.js       # Main dashboard to show threat and incident status
-│   ├── IncidentResponse.js# Incident response management interface
-│   ├── DataProcessing.js  # Manage the data pipeline processing
-│   ├── AIModel.js         # Display real-time threat detection and ML results
-│   ├── Analytics.js       # Visualizations and analysis of historical data
-│   └── Settings.js        # Configuration for system integration, encryption, etc.
+├── database/                 # Database-related files (migration scripts, schema, etc.)
+│   ├── migrations/           # Database migration scripts
+│   ├── seeders/              # Sample data for populating database
+│   ├── schema.sql            # SQL schema file for database structure
+│   └── db_config.json        # Database configuration
 │
-├── services/              # Service layers for handling data fetching, APIs, and integrations
-│   ├── api.js             # API requests to backend (e.g., REST API or gRPC)
-│   ├── dataService.js     # Service to manage data collection (logs, traffic, etc.)
-│   ├── mlService.js       # Service for AI and ML model interaction
-│   ├── authService.js     # User authentication and access control
-│   └── securityService.js # Handles encryption and access control logic
+├── docker/                   # Docker-related files (Dockerfile, docker-compose, etc.)
+│   ├── Dockerfile            # Backend Docker configuration
+│   ├── docker-compose.yml    # Docker Compose file to set up containers
+│   └── Dockerfile-frontend   # Frontend Docker configuration
 │
-├── store/                 # Redux or Context API for managing global state
-│   ├── actions/           # Redux actions for dispatching updates (e.g., fetching data)
-│   ├── reducers/          # Redux reducers for handling the app state
-│   └── store.js           # Setup for Redux or Context API store
+├── logs/                     # Log files generated during execution (backend logs, errors, etc.)
+│   └── app.log               # Application logs (can be rotated daily or weekly)
 │
-├── utils/                 # Utility functions for common tasks
-│   ├── formatData.js      # Utility for formatting raw data before rendering
-│   ├── dateUtils.js       # Date formatting and manipulation
-│   └── notificationUtils.js # Helper functions for alerting and notifications
+├── tests/                    # Unit and integration tests
+│   ├── backend/              # Backend test files
+│   ├── frontend/             # Frontend test files
+│   └── apiTests.js           # API tests to ensure backend is working
 │
-├── App.js                 # Main app component for routing and rendering the layout
-├── index.js               # Entry point for the React app (renders the App component)
-├── styles/                # Global styles (CSS or SCSS)
-│   ├── global.css         # Base styles
-│   └── dashboard.css      # Dashboard-specific styles
-└── package.json           # App dependencies and configuration
-
+├── .gitignore                # Git ignore file for unwanted files/folders
+└── README.md                 # Project documentation
 ## 🔧 Configuration
 
 1. Update `.env` with your configurations
